@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SummitVI - Firma de Venture Capital en Puerto Rico. Invertimos en startups tecnológicas de alto crecimiento.">
+    <title>SummitVI | Venture Capital Puerto Rico</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Vanilla Tilt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-summit-dark text-white overflow-x-hidden">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
+        <div class="w-full px-6 lg:px-12 xl:px-20">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="flex items-center space-x-3 group">
+                    <div class="logo-container">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none">
+                            <path class="logo-mountain" d="M20 5L5 35H15L20 25L25 35H35L20 5Z" fill="url(#logoGradient)"/>
+                            <defs>
+                                <linearGradient id="logoGradient" x1="5" y1="5" x2="35" y2="35">
+                                    <stop offset="0%" stop-color="#00D4FF"/>
+                                    <stop offset="100%" stop-color="#FFB800"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                    <span class="text-xl font-bold font-space tracking-tight">
+                        SUMMIT<span class="text-summit-electric">VI</span>
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Nosotros</a>
+                    <a href="#servicios" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Servicios</a>
+                    <a href="#portfolio" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Portfolio</a>
+                    <a href="#contacto" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Contacto</a>
+                    <a href="#contacto" class="btn-3d px-6 py-2.5 text-sm font-semibold rounded-full">
+                        Invertir
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-summit-dark/95 backdrop-blur-lg">
+            <div class="px-6 py-4 space-y-4">
+                <a href="#about" class="block text-sm font-medium hover:text-summit-electric">Nosotros</a>
+                <a href="#servicios" class="block text-sm font-medium hover:text-summit-electric">Servicios</a>
+                <a href="#portfolio" class="block text-sm font-medium hover:text-summit-electric">Portfolio</a>
+                <a href="#contacto" class="block text-sm font-medium hover:text-summit-electric">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Three.js Canvas -->
+        <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
+
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-summit-dark/50 via-transparent to-summit-dark pointer-events-none"></div>
+
+        <!-- Floating Geometric Elements -->
+        <div class="geometric-elements absolute inset-0 pointer-events-none overflow-hidden">
+            <div class="floating-cube" style="--delay: 0s; --x: 10%; --y: 20%;">
+                <div class="cube">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                </div>
+            </div>
+            <div class="floating-cube" style="--delay: 2s; --x: 85%; --y: 60%;">
+                <div class="cube cube-small">
+                    <div class="face front"></div>
+                    <div class="face back"></div>
+                    <div class="face right"></div>
+                    <div class="face left"></div>
+                    <div class="face top"></div>
+                    <div class="face bottom"></div>
+                </div>
+            </div>
+            <div class="floating-pyramid" style="--delay: 4s; --x: 75%; --y: 15%;"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+            <div class="hero-badge inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
+                <span class="w-2 h-2 rounded-full bg-summit-gold animate-pulse"></span>
+                <span class="text-sm font-medium text-white/80">Venture Capital de Puerto Rico</span>
+            </div>
+
+            <h1 class="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-space leading-tight mb-6">
+                <span class="block overflow-hidden">
+                    <span class="hero-char inline-block">S</span><span class="hero-char inline-block">U</span><span class="hero-char inline-block">M</span><span class="hero-char inline-block">M</span><span class="hero-char inline-block">I</span><span class="hero-char inline-block">T</span>
+                </span>
+                <span class="block overflow-hidden text-summit-electric">
+                    <span class="hero-char inline-block">V</span><span class="hero-char inline-block">I</span>
+                </span>
+            </h1>
+
+            <p class="hero-subtitle text-lg sm:text-xl md:text-2xl text-white/70 max-w-2xl mx-auto mb-10 font-light">
+                Elevamos startups tecnológicas al siguiente nivel. Inversión estratégica, mentoría experta y acceso a redes globales.
+            </p>
+
+            <div class="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contacto" class="btn-3d-primary px-8 py-4 text-base font-semibold rounded-full flex items-center space-x-2">
+                    <span>Comienza tu Ascenso</span>
+                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                </a>
+                <a href="#portfolio" class="px-8 py-4 text-base font-medium rounded-full border border-white/20 hover:bg-white/5 transition-all flex items-center space-x-2">
+                    <span>Ver Portfolio</span>
+                    <i data-lucide="chevron-down" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center space-y-2 opacity-60">
+            <span class="text-xs uppercase tracking-widest">Scroll</span>
+            <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 border-y border-white/10">
+        <div class="w-full px-6 lg:px-12 xl:px-20">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="stat-item text-center" data-tilt data-tilt-max="5" data-tilt-glare>
+                    <div class="text-4xl md:text-5xl font-bold text-summit-electric mb-2">$50M+</div>
+                    <div class="text-sm text-white/60 uppercase tracking-wider">Assets Bajo Gestión</div>
+                </div>
+                <div class="stat-item text-center" data-tilt data-tilt-max="5" data-tilt-glare>
+                    <div class="text-4xl md:text-5xl font-bold text-summit-gold mb-2">25+</div>
+                    <div class="text-sm text-white/60 uppercase tracking-wider">Startups Invertidas</div>
+                </div>
+                <div class="stat-item text-center" data-tilt data-tilt-max="5" data-tilt-glare>
+                    <div class="text-4xl md:text-5xl font-bold text-summit-electric mb-2">15</div>
+                    <div class="text-sm text-white/60 uppercase tracking-wider">Exitosos Exits</div>
+                </div>
+                <div class="stat-item text-center" data-tilt data-tilt-max="5" data-tilt-glare>
+                    <div class="text-4xl md:text-5xl font-bold text-summit-gold mb-2">3x</div>
+                    <div class="text-sm text-white/60 uppercase tracking-wider">Retorno Promedio</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 lg:py-32 relative">
+        <div class="w-full px-6 lg:px-12 xl:px-20">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Side -->
+                <div class="about-image relative">
+                    <div class="relative z-10 rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
+                             alt="Modern Architecture"
+                             class="w-full h-[500px] object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-summit-dark/80 to-transparent"></div>
+                    </div>
+                    <!-- Decorative Elements -->
+                    <div class="absolute -top-6 -right-6 w-32 h-32 border-2 border-summit-electric/30 rounded-2xl -z-10"></div>
+                    <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-summit-electric/10 rounded-2xl -z-10 blur-2xl"></div>
+                </div>
+
+                <!-- Content Side -->
+                <div class="about-content">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-summit-electric/10 border border-summit-electric/30 mb-6">
+                        <i data-lucide="mountain" class="w-4 h-4 text-summit-electric"></i>
+                        <span class="text-xs font-medium text-summit-electric uppercase tracking-wider">Quiénes Somos</span>
+                    </div>
+
+                    <h2 class="text-4xl md:text-5xl font-bold font-space mb-6 leading-tight">
+                        Alcanzando la <span class="text-gradient">Cumbre</span> del Éxito
+                    </h2>
+
+                    <p class="text-lg text-white/70 mb-6 leading-relaxed">
+                        SummitVI es una firma de venture capital con sede en Puerto Rico, dedicada a identificar y potenciar las startups tecnológicas más prometedoras de América Latina y el Caribe.
+                    </p>
+
+                    <p class="text-lg text-white/70 mb-8 leading-relaxed">
+                        Nuestro enfoque combina capital estratégico con mentoría experta y acceso a una red global de inversionistas, empresarios y líderes de la industria. Creemos en construir juntos, no solo invertir.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-summit-electric/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="target" class="w-5 h-5 text-summit-electric"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Visión Estratégica</h4>
+                                <p class="text-sm text-white/60">Identificamos oportunidades de alto impacto</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <div class="w-10 h-10 rounded-lg bg-summit-gold/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="users" class="w-5 h-5 text-summit-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold mb-1">Mentoría Experta</h4>
+                                <p class="text-sm text-white/60">Acompañamiento de clase mundial</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="py-24 lg:py-32 bg-summit-light relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-30">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-summit-electric/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-summit-gold/10 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="w-full px-6 lg:px-12 xl:px-20 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-summit-dark/10 border border-summit-dark/20 mb-6">
+                    <i data-lucide="layers" class="w-4 h-4 text-summit-dark"></i>
+                    <span class="text-xs font-medium text-summit-dark uppercase tracking-wider">Nuestros Servicios</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold font-space text-summit-dark mb-4">
+                    Cómo Ayudamos a <span class="text-summit-electric">Crecer</span>
+                </h2>
+                <p class="text-lg text-summit-dark/70">
+                    Ofrecemos un ecosistema completo de apoyo para startups en todas las etapas de crecimiento.
+                </p>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service Card 1 -->
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-electric to-summit-electric/60 flex items-center justify-center mb-6">
+                            <i data-lucide="seedling" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Inversión Semilla</h3>
+                        <p class="text-summit-dark/60 text-sm leading-relaxed">
+                            Capital inicial para validar tu idea y construir tu MVP. De $50K a $500K.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-summit-dark/10">
+                            <span class="text-summit-electric font-semibold text-sm flex items-center">
+                                Saber más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-gold to-summit-gold/60 flex items-center justify-center mb-6">
+                            <i data-lucide="trending-up" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Serie A/B</h3>
+                        <p class="text-summit-dark/60 text-sm leading-relaxed">
+                            Escalamiento para startups con tracción comprobada. De $1M a $10M.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-summit-dark/10">
+                            <span class="text-summit-gold font-semibold text-sm flex items-center">
+                                Saber más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-electric to-summit-electric/60 flex items-center justify-center mb-6">
+                            <i data-lucide="compass" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Mentoría</h3>
+                        <p class="text-summit-dark/60 text-sm leading-relaxed">
+                            Acompañamiento estratégico de expertos con experiencia en tu industria.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-summit-dark/10">
+                            <span class="text-summit-electric font-semibold text-sm flex items-center">
+                                Saber más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-gold to-summit-gold/60 flex items-center justify-center mb-6">
+                            <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Network Global</h3>
+                        <p class="text-summit-dark/60 text-sm leading-relaxed">
+                            Acceso a inversionistas, clientes potenciales y partners estratégicos.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-summit-dark/10">
+                            <span class="text-summit-gold font-semibold text-sm flex items-center">
+                                Saber más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 lg:py-32 relative overflow-hidden">
+        <!-- Floating Background Elements -->
+        <div class="portfolio-float absolute inset-0 pointer-events-none">
+            <div class="float-item" style="--orbit: 20s; --radius: 200px; top: 20%; left: 10%;">
+                <div class="w-16 h-16 rounded-full bg-summit-electric/20 flex items-center justify-center">
+                    <i data-lucide="code" class="w-6 h-6 text-summit-electric"></i>
+                </div>
+            </div>
+            <div class="float-item" style="--orbit: 25s; --radius: 250px; top: 60%; left: 80%;">
+                <div class="w-20 h-20 rounded-full bg-summit-gold/20 flex items-center justify-center">
+                    <i data-lucide="rocket" class="w-8 h-8 text-summit-gold"></i>
+                </div>
+            </div>
+            <div class="float-item" style="--orbit: 30s; --radius: 180px; top: 40%; left: 85%;">
+                <div class="w-14 h-14 rounded-full bg-summit-electric/20 flex items-center justify-center">
+                    <i data-lucide="zap" class="w-5 h-5 text-summit-electric"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="w-full px-6 lg:px-12 xl:px-20 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-summit-gold/10 border border-summit-gold/30 mb-6">
+                    <i data-lucide="briefcase" class="w-4 h-4 text-summit-gold"></i>
+                    <span class="text-xs font-medium text-summit-gold uppercase tracking-wider">Portfolio</span>
+                </div>
+                <h2 class="text-4xl md:text-5xl font-bold font-space mb-4">
+                    Empresas que Han <span class="text-gradient">Escalado</span>
+                </h2>
+                <p class="text-lg text-white/70">
+                    Conoce algunas de las startups que han confiado en nosotros para alcanzar la cumbre.
+                </p>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Portfolio Item 1 -->
+                <div class="portfolio-card group relative">
+                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all duration-500">
+                        <div class="aspect-[4/3] relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
+                                 alt="Tech Startup"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold">TechFlow</h3>
+                                <span class="px-3 py-1 rounded-full bg-summit-electric/20 text-summit-electric text-xs font-medium">Series A</span>
+                            </div>
+                            <p class="text-white/60 text-sm mb-4">Plataforma de automatización de flujos de trabajo para empresas.</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
+                                    300% crecimiento
+                                </span>
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
+                                    50+ empleados
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 2 -->
+                <div class="portfolio-card group relative">
+                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-gold/50 transition-all duration-500">
+                        <div class="aspect-[4/3] relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80"
+                                 alt="Fintech Startup"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold">FinPuerto</h3>
+                                <span class="px-3 py-1 rounded-full bg-summit-gold/20 text-summit-gold text-xs font-medium">Series B</span>
+                            </div>
+                            <p class="text-white/60 text-sm mb-4">Soluciones de pago digital para el mercado latinoamericano.</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
+                                    500% crecimiento
+                                </span>
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
+                                    120+ empleados
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 3 -->
+                <div class="portfolio-card group relative">
+                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all duration-500">
+                        <div class="aspect-[4/3] relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80"
+                                 alt="Health Tech"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold">MediCaribe</h3>
+                                <span class="px-3 py-1 rounded-full bg-summit-electric/20 text-summit-electric text-xs font-medium">Semilla</span>
+                            </div>
+                            <p class="text-white/60 text-sm mb-4">Telemedicina y gestión de salud para comunidades remotas.</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
+                                    150% crecimiento
+                                </span>
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
+                                    25+ empleados
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 4 -->
+                <div class="portfolio-card group relative">
+                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-gold/50 transition-all duration-500">
+                        <div class="aspect-[4/3] relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80"
+                                 alt="SaaS Platform"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold">CloudPeak</h3>
+                                <span class="px-3 py-1 rounded-full bg-summit-gold/20 text-summit-gold text-xs font-medium">Series A</span>
+                            </div>
+                            <p class="text-white/60 text-sm mb-4">Infraestructura cloud para empresas del Caribe.</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
+                                    250% crecimiento
+                                </span>
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
+                                    40+ empleados
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 5 -->
+                <div class="portfolio-card group relative">
+                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all duration-500">
+                        <div class="aspect-[4/3] relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80"
+                                 alt="E-commerce"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold">MercadoLatino</h3>
+                                <span class="px-3 py-1 rounded-full bg-summit-electric/20 text-summit-electric text-xs font-medium">Exit</span>
+                            </div>
+                            <p class="text-white/60 text-sm mb-4">Marketplace B2B para comercio intra-regional.</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="check-circle" class="w-4 h-4 mr-1 text-summit-gold"></i>
+                                    Exit exitoso
+                                </span>
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="dollar-sign" class="w-4 h-4 mr-1 text-summit-gold"></i>
+                                    8x retorno
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Portfolio Item 6 -->
+                <div class="portfolio-card group relative">
+                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-gold/50 transition-all duration-500">
+                        <div class="aspect-[4/3] relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80"
+                                 alt="Data Analytics"
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 p-6">
+                            <div class="flex items-center justify-between mb-2">
+                                <h3 class="text-xl font-bold">DataVista</h3>
+                                <span class="px-3 py-1 rounded-full bg-summit-gold/20 text-summit-gold text-xs font-medium">Series A</span>
+                            </div>
+                            <p class="text-white/60 text-sm mb-4">Análisis predictivo para el sector turístico.</p>
+                            <div class="flex items-center space-x-4 text-sm">
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
+                                    400% crecimiento
+                                </span>
+                                <span class="flex items-center text-white/80">
+                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
+                                    35+ empleados
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-24 lg:py-32 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute inset-0 bg-gradient-to-r from-summit-electric/20 to-summit-gold/20"></div>
+            <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-summit-electric to-transparent"></div>
+            <div class="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-summit-gold to-transparent"></div>
+        </div>
+
+        <div class="w-full px-6 lg:px-12 xl:px-20 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold font-space mb-6">
+                    ¿Listo para <span class="text-gradient">Escalar</span>?
+                </h2>
+                <p class="text-xl text-white/70 mb-10 max-w-2xl mx-auto">
+                    Si tienes una startup tecnológica con potencial de crecimiento, queremos conocerte. Juntos podemos alcanzar la cumbre.
+                </p>
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <a href="#contacto" class="btn-3d-primary px-10 py-5 text-lg font-semibold rounded-full flex items-center space-x-3">
+                        <span>Aplicar a Inversión</span>
+                        <i data-lucide="send" class="w-5 h-5"></i>
+                    </a>
+                    <a href="mailto:info@summitvi.com" class="px-10 py-5 text-lg font-medium rounded-full border border-white/20 hover:bg-white/5 transition-all">
+                        Contactar Directo
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 lg:py-32 bg-summit-light relative">
+        <div class="w-full px-6 lg:px-12 xl:px-20">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-summit-dark/10 border border-summit-dark/20 mb-6">
+                        <i data-lucide="message-circle" class="w-4 h-4 text-summit-dark"></i>
+                        <span class="text-xs font-medium text-summit-dark uppercase tracking-wider">Contacto</span>
+                    </div>
+
+                    <h2 class="text-4xl md:text-5xl font-bold font-space text-summit-dark mb-6">
+                        Empecemos la <span class="text-summit-electric">Conversación</span>
+                    </h2>
+
+                    <p class="text-lg text-summit-dark/70 mb-10">
+                        Ya sea que busques inversión, tengas preguntas sobre nuestro proceso, o simplemente quieras conectar, estamos aquí para escucharte.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-summit-electric/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="map-pin" class="w-6 h-6 text-summit-electric"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-summit-dark mb-1">Oficina Principal</h4>
+                                <p class="text-summit-dark/60">Torre Chardón, Suite 1200<br>San Juan, Puerto Rico 00918</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-summit-gold/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="mail" class="w-6 h-6 text-summit-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-summit-dark mb-1">Email</h4>
+                                <p class="text-summit-dark/60">info@summitvi.com<br>invest@summitvi.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-summit-electric/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="phone" class="w-6 h-6 text-summit-electric"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-summit-dark mb-1">Teléfono</h4>
+                                <p class="text-summit-dark/60">+1 (787) 555-0147</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <form id="contact-form" class="bg-white rounded-2xl p-8 md:p-10 shadow-xl border border-summit-dark/10">
+                        <div class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-summit-dark mb-2">Nombre</label>
+                                    <input type="text" name="nombre" required
+                                           class="w-full px-4 py-3 rounded-lg border border-summit-dark/20 focus:border-summit-electric focus:ring-2 focus:ring-summit-electric/20 outline-none transition-all"
+                                           placeholder="Tu nombre">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-summit-dark mb-2">Empresa</label>
+                                    <input type="text" name="empresa"
+                                           class="w-full px-4 py-3 rounded-lg border border-summit-dark/20 focus:border-summit-electric focus:ring-2 focus:ring-summit-electric/20 outline-none transition-all"
+                                           placeholder="Nombre de tu empresa">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-summit-dark mb-2">Email</label>
+                                <input type="email" name="email" required
+                                       class="w-full px-4 py-3 rounded-lg border border-summit-dark/20 focus:border-summit-electric focus:ring-2 focus:ring-summit-electric/20 outline-none transition-all"
+                                       placeholder="tu@email.com">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-summit-dark mb-2">Tipo de Consulta</label>
+                                <select name="tipo" required
+                                        class="w-full px-4 py-3 rounded-lg border border-summit-dark/20 focus:border-summit-electric focus:ring-2 focus:ring-summit-electric/20 outline-none transition-all bg-white">
+                                    <option value="">Selecciona una opción</option>
+                                    <option value="inversion">Solicitud de Inversión</option>
+                                    <option value="informacion">Información General</option>
+                                    <option value="partnership">Partnership Estratégico</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-summit-dark mb-2">Mensaje</label>
+                                <textarea name="mensaje" rows="4" required
+                                          class="w-full px-4 py-3 rounded-lg border border-summit-dark/20 focus:border-summit-electric focus:ring-2 focus:ring-summit-electric/20 outline-none transition-all resize-none"
+                                          placeholder="Cuéntanos sobre tu proyecto..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn-3d-primary w-full py-4 text-base font-semibold rounded-lg flex items-center justify-center space-x-2">
+                                <span>Enviar Mensaje</span>
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-summit-dark border-t border-white/10 py-16">
+        <div class="w-full px-6 lg:px-12 xl:px-20">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <!-- Brand -->
+                <div class="lg:col-span-2">
+                    <a href="#" class="flex items-center space-x-3 mb-6">
+                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none">
+                            <path d="M20 5L5 35H15L20 25L25 35H35L20 5Z" fill="url(#footerGradient)"/>
+                            <defs>
+                                <linearGradient id="footerGradient" x1="5" y1="5" x2="35" y2="35">
+                                    <stop offset="0%" stop-color="#00D4FF"/>
+                                    <stop offset="100%" stop-color="#FFB800"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <span class="text-2xl font-bold font-space">
+                            SUMMIT<span class="text-summit-electric">VI</span>
+                        </span>
+                    </a>
+                    <p class="text-white/60 mb-6 max-w-md">
+                        Elevando startups tecnológicas al siguiente nivel. Tu socio estratégico para alcanzar la cumbre del éxito.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-summit-electric/20 hover:border-summit-electric/50 transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-summit-electric/20 hover:border-summit-electric/50 transition-all">
+                            <i data-lucide="twitter" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-summit-electric/20 hover:border-summit-electric/50 transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-summit-electric/20 hover:border-summit-electric/50 transition-all">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-white/60 hover:text-summit-electric transition-colors">Nosotros</a></li>
+                        <li><a href="#servicios" class="text-white/60 hover:text-summit-electric transition-colors">Servicios</a></li>
+                        <li><a href="#portfolio" class="text-white/60 hover:text-summit-electric transition-colors">Portfolio</a></li>
+                        <li><a href="#contacto" class="text-white/60 hover:text-summit-electric transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div>
+                    <h4 class="font-semibold mb-4">Recursos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Guía para Startups</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Eventos</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Prensa</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom -->
+            <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between">
+                <p class="text-white/40 text-sm">
+                    © 2026 SummitVI. Todos los derechos reservados.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-white/40 hover:text-white/60 text-sm transition-colors">Política de Privacidad</a>
+                    <a href="#" class="text-white/40 hover:text-white/60 text-sm transition-colors">Términos de Servicio</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 bg-summit-electric text-white px-6 py-4 rounded-lg shadow-2xl transform translate-y-24 opacity-0 transition-all duration-500 z-50 flex items-center space-x-3">
+        <i data-lucide="check-circle" class="w-5 h-5"></i>
+        <span id="toast-message">¡Mensaje enviado con éxito!</span>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>

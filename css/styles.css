@@ -1,0 +1,628 @@
+/* ========================================
+   SUMMITVI - Custom Styles
+   Modern 3D Venture Capital Website
+   ======================================== */
+
+/* Custom Properties */
+:root {
+  --summit-dark: #0A1628;
+  --summit-electric: #00D4FF;
+  --summit-gold: #FFB800;
+  --summit-light: #F0F4F8;
+  --white: #FFFFFF;
+}
+
+/* Tailwind Custom Colors */
+.bg-summit-dark { background-color: #0A1628; }
+.text-summit-electric { color: #00D4FF; }
+.bg-summit-electric { background-color: #00D4FF; }
+.text-summit-gold { color: #FFB800; }
+.bg-summit-gold { background-color: #FFB800; }
+.bg-summit-light { background-color: #F0F4F8; }
+.text-summit-dark { color: #0A1628; }
+.border-summit-electric\/50 { border-color: rgba(0, 212, 255, 0.5); }
+.border-summit-gold\/50 { border-color: rgba(255, 184, 0, 0.5); }
+
+/* Font Families */
+.font-space {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+/* ========================================
+   Base Styles & Reset
+   ======================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #0A1628;
+  color: #FFFFFF;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling with reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   Text Gradient Effect
+   ======================================== */
+
+.text-gradient {
+  background: linear-gradient(135deg, #00D4FF 0%, #FFB800 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ========================================
+   Navigation Styles
+   ======================================== */
+
+#navbar {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#navbar.scrolled {
+  background-color: rgba(10, 22, 40, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#navbar.scrolled .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+#navbar.scrolled .nav-link:hover {
+  color: #00D4FF;
+}
+
+/* Logo Animation */
+.logo-mountain {
+  transform-origin: center;
+  animation: logoPulse 3s ease-in-out infinite;
+}
+
+@keyframes logoPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(0, 212, 255, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(0, 212, 255, 0.8));
+  }
+}
+
+/* ========================================
+   3D Button Styles
+   ======================================== */
+
+.btn-3d {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  color: #00D4FF;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.btn-3d::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-3d:hover {
+  transform: translateY(-2px);
+  border-color: #00D4FF;
+  box-shadow:
+    0 10px 30px -10px rgba(0, 212, 255, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.btn-3d:hover::before {
+  opacity: 1;
+}
+
+.btn-3d:active {
+  transform: translateY(0);
+}
+
+/* Primary 3D Button */
+.btn-3d-primary {
+  position: relative;
+  background: linear-gradient(135deg, #00D4FF 0%, #00A8CC 100%);
+  color: #0A1628;
+  border: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+
+.btn-3d-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #FFB800 0%, #00D4FF 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-3d-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.2), transparent);
+  transition: opacity 0.3s ease;
+}
+
+.btn-3d-primary:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow:
+    0 20px 40px -10px rgba(0, 212, 255, 0.5),
+    0 0 30px rgba(0, 212, 255, 0.3);
+}
+
+.btn-3d-primary:hover::before {
+  opacity: 1;
+}
+
+.btn-3d-primary:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+.btn-3d-primary span,
+.btn-3d-primary i {
+  position: relative;
+  z-index: 10;
+}
+
+/* ========================================
+   Hero Section Styles
+   ======================================== */
+
+#hero {
+  perspective: 1000px;
+}
+
+/* Hero Badge */
+.hero-badge {
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+/* Hero Title Animation */
+.hero-title {
+  perspective: 1000px;
+}
+
+.hero-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100px) rotateX(-90deg);
+  animation: charReveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.hero-char:nth-child(1) { animation-delay: 0.4s; }
+.hero-char:nth-child(2) { animation-delay: 0.48s; }
+.hero-char:nth-child(3) { animation-delay: 0.56s; }
+.hero-char:nth-child(4) { animation-delay: 0.64s; }
+.hero-char:nth-child(5) { animation-delay: 0.72s; }
+.hero-char:nth-child(6) { animation-delay: 0.8s; }
+.hero-char:nth-child(7) { animation-delay: 1.0s; }
+.hero-char:nth-child(8) { animation-delay: 1.08s; }
+
+@keyframes charReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 1.2s both;
+}
+
+/* Hero CTA */
+.hero-cta {
+  opacity: 0;
+  animation: fadeInUp 0.8s ease-out 1.4s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   Floating Geometric Elements (CSS 3D)
+   ======================================== */
+
+.geometric-elements {
+  perspective: 1000px;
+}
+
+.floating-cube {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  animation: float var(--delay, 0s) 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(180deg);
+  }
+}
+
+/* 3D Cube */
+.cube {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCube 20s linear infinite;
+}
+
+.cube-small {
+  width: 40px;
+  height: 40px;
+}
+
+.cube .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgba(0, 212, 255, 0.3);
+  background: linear-gradient(135deg, rgba(0, 212, 255, 0.1) 0%, rgba(0, 212, 255, 0.05) 100%);
+  backdrop-filter: blur(5px);
+}
+
+.cube .front  { transform: translateZ(30px); }
+.cube .back   { transform: rotateY(180deg) translateZ(30px); }
+.cube .right  { transform: rotateY(90deg) translateZ(30px); }
+.cube .left   { transform: rotateY(-90deg) translateZ(30px); }
+.cube .top    { transform: rotateX(90deg) translateZ(30px); }
+.cube .bottom { transform: rotateX(-90deg) translateZ(30px); }
+
+.cube-small .front  { transform: translateZ(20px); }
+.cube-small .back   { transform: rotateY(180deg) translateZ(20px); }
+.cube-small .right  { transform: rotateY(90deg) translateZ(20px); }
+.cube-small .left   { transform: rotateY(-90deg) translateZ(20px); }
+.cube-small .top    { transform: rotateX(90deg) translateZ(20px); }
+.cube-small .bottom { transform: rotateX(-90deg) translateZ(20px); }
+
+@keyframes rotateCube {
+  from {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(360deg) rotateY(360deg);
+  }
+}
+
+/* Floating Pyramid */
+.floating-pyramid {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  width: 0;
+  height: 0;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  border-bottom: 50px solid rgba(255, 184, 0, 0.3);
+  animation: floatPyramid 8s ease-in-out infinite;
+}
+
+@keyframes floatPyramid {
+  0%, 100% {
+    transform: translateY(0) rotateZ(0deg);
+  }
+  50% {
+    transform: translateY(-30px) rotateZ(10deg);
+  }
+}
+
+/* ========================================
+   Stats Section Styles
+   ======================================== */
+
+.stat-item {
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+/* ========================================
+   Service Cards with 3D Tilt
+   ======================================== */
+
+.service-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.service-card .card-inner {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.service-card:hover .card-inner {
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(0, 212, 255, 0.1);
+}
+
+/* Vanilla Tilt Glare Effect Customization */
+.js-tilt-glare {
+  border-radius: 1rem;
+}
+
+/* ========================================
+   Portfolio Section Styles
+   ======================================== */
+
+.portfolio-float {
+  perspective: 1000px;
+}
+
+.float-item {
+  position: absolute;
+  animation: orbit var(--orbit) linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(var(--radius)) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(var(--radius)) rotate(-360deg);
+  }
+}
+
+/* Portfolio Card Styles */
+.portfolio-card {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.portfolio-card > div {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-card:hover > div {
+  transform: translateZ(20px);
+}
+
+.portfolio-card img {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   Contact Form Styles
+   ======================================== */
+
+#contact-form input,
+#contact-form select,
+#contact-form textarea {
+  transition: all 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form select:focus,
+#contact-form textarea:focus {
+  box-shadow: 0 0 0 4px rgba(0, 212, 255, 0.1);
+}
+
+/* ========================================
+   Scroll Animation Classes (GSAP)
+   ======================================== */
+
+.reveal-3d {
+  opacity: 0;
+  transform: translateY(50px) rotateX(15deg);
+  transform-origin: center bottom;
+}
+
+.reveal-3d.revealed {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stagger children */
+.stagger-children > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.stagger-children.revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-children.revealed > *:nth-child(1) { transition-delay: 0s; }
+.stagger-children.revealed > *:nth-child(2) { transition-delay: 0.1s; }
+.stagger-children.revealed > *:nth-child(3) { transition-delay: 0.2s; }
+.stagger-children.revealed > *:nth-child(4) { transition-delay: 0.3s; }
+.stagger-children.revealed > *:nth-child(5) { transition-delay: 0.4s; }
+.stagger-children.revealed > *:nth-child(6) { transition-delay: 0.5s; }
+
+/* ========================================
+   Toast Notification
+   ======================================== */
+
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ========================================
+   Mobile Menu Styles
+   ======================================== */
+
+#mobile-menu {
+  transition: all 0.3s ease;
+}
+
+/* ========================================
+   Scrollbar Styles
+   ======================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #00D4FF 0%, #FFB800 100%);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FFB800 0%, #00D4FF 100%);
+}
+
+/* ========================================
+   Selection Styles
+   ======================================== */
+
+::selection {
+  background-color: rgba(0, 212, 255, 0.3);
+  color: #FFFFFF;
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem !important;
+  }
+
+  .cube,
+  .floating-pyramid {
+    display: none;
+  }
+
+  .btn-3d-primary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 2rem !important;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem !important;
+  }
+}
+
+/* ========================================
+   Print Styles
+   ======================================== */
+
+@media print {
+  .geometric-elements,
+  #hero-canvas,
+  .portfolio-float,
+  .floating-cube,
+  .floating-pyramid {
+    display: none !important;
+  }
+
+  #navbar {
+    position: relative !important;
+    background: #0A1628 !important;
+  }
+}
+
+/* ========================================
+   Focus Visible Styles (Accessibility)
+   ======================================== */
+
+:focus-visible {
+  outline: 2px solid #00D4FF;
+  outline-offset: 2px;
+}
+
+/* ========================================
+   Loading Animation
+   ======================================== */
+
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: #0A1628;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loading-spinner {
+  width: 60px;
+  height: 60px;
+  border: 3px solid rgba(0, 212, 255, 0.1);
+  border-top-color: #00D4FF;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="SummitVI - Firma de Venture Capital en Puerto Rico. Invertimos en startups tecnológicas de alto crecimiento.">
-    <title>SummitVI | Venture Capital Puerto Rico</title>
+    <meta name="description" content="SummitVI - Empresa dedicada al desarrollo de software. Páginas web, aplicaciones móviles, aplicaciones de escritorio, SEO, análisis de datos e inteligencia artificial.">
+    <title>SummitVI | Desarrollo de Software</title>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,10 +67,8 @@
                                 <div class="logo-face logo-face-top"></div>
                                 <div class="logo-face logo-face-bottom"></div>
                             </div>
-                            <!-- Glow effect -->
                             <div class="logo-glow"></div>
                         </div>
-                        <!-- Particles around logo -->
                         <div class="logo-particles">
                             <span class="logo-particle p1"></span>
                             <span class="logo-particle p2"></span>
@@ -85,12 +83,13 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Nosotros</a>
+                    <a href="#inicio" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Inicio</a>
+                    <a href="#nosotros" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Nosotros</a>
                     <a href="#servicios" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Servicios</a>
-                    <a href="#portfolio" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Portfolio</a>
+                    <a href="#proyectos" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Proyectos</a>
                     <a href="#contacto" class="nav-link text-sm font-medium hover:text-summit-electric transition-colors">Contacto</a>
                     <a href="#contacto" class="btn-3d px-6 py-2.5 text-sm font-semibold rounded-full">
-                        Invertir
+                        Solicitar Servicio
                     </a>
                 </div>
 
@@ -104,16 +103,17 @@
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-summit-dark/95 backdrop-blur-lg">
             <div class="px-6 py-4 space-y-4">
-                <a href="#about" class="block text-sm font-medium hover:text-summit-electric">Nosotros</a>
+                <a href="#inicio" class="block text-sm font-medium hover:text-summit-electric">Inicio</a>
+                <a href="#nosotros" class="block text-sm font-medium hover:text-summit-electric">Nosotros</a>
                 <a href="#servicios" class="block text-sm font-medium hover:text-summit-electric">Servicios</a>
-                <a href="#portfolio" class="block text-sm font-medium hover:text-summit-electric">Portfolio</a>
+                <a href="#proyectos" class="block text-sm font-medium hover:text-summit-electric">Proyectos</a>
                 <a href="#contacto" class="block text-sm font-medium hover:text-summit-electric">Contacto</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="inicio" class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <!-- Three.js Canvas -->
         <canvas id="hero-canvas" class="absolute inset-0 w-full h-full"></canvas>
 
@@ -148,8 +148,8 @@
         <!-- Hero Content -->
         <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
             <div class="hero-badge inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8">
-                <span class="w-2 h-2 rounded-full bg-summit-gold animate-pulse"></span>
-                <span class="text-sm font-medium text-white/80">Venture Capital de Puerto Rico</span>
+                <span class="w-2 h-2 rounded-full bg-summit-electric animate-pulse"></span>
+                <span class="text-sm font-medium text-white/80">Desarrollo de Software Profesional</span>
             </div>
 
             <h1 class="hero-title text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-space leading-tight mb-6">
@@ -162,16 +162,16 @@
             </h1>
 
             <p class="hero-subtitle text-lg sm:text-xl md:text-2xl text-white/70 max-w-2xl mx-auto mb-10 font-light">
-                Elevamos startups tecnológicas al siguiente nivel. Inversión estratégica, mentoría experta y acceso a redes globales.
+                Explora la tecnología y sé tu propio héroe digital. Desarrollamos soluciones de software a medida para impulsar tu negocio.
             </p>
 
             <div class="hero-cta flex flex-col sm:flex-row items-center justify-center gap-4">
                 <a href="#contacto" class="btn-3d-primary px-8 py-4 text-base font-semibold rounded-full flex items-center space-x-2">
-                    <span>Comienza tu Ascenso</span>
+                    <span>Solicitar Servicio</span>
                     <i data-lucide="arrow-right" class="w-5 h-5"></i>
                 </a>
-                <a href="#portfolio" class="px-8 py-4 text-base font-medium rounded-full border border-white/20 hover:bg-white/5 transition-all flex items-center space-x-2">
-                    <span>Ver Portfolio</span>
+                <a href="#servicios" class="px-8 py-4 text-base font-medium rounded-full border border-white/20 hover:bg-white/5 transition-all flex items-center space-x-2">
+                    <span>Ver Servicios</span>
                     <i data-lucide="chevron-down" class="w-5 h-5"></i>
                 </a>
             </div>
@@ -184,39 +184,56 @@
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="py-20 border-y border-white/10">
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="py-24 lg:py-32 relative">
         <div class="w-full px-6 lg:px-12 xl:px-20">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="stat-item text-center" data-tilt data-tilt-max="5" data-tilt-glare>
-                    <div class="text-4xl md:text-5xl font-bold text-summit-electric mb-2">$50M+</div>
-                    <div class="text-sm text-white/60 uppercase tracking-wider">Assets Bajo Gestión</div>
+            <div class="text-center max-w-4xl mx-auto mb-16">
+                <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-summit-electric/10 border border-summit-electric/30 mb-6">
+                    <i data-lucide="users" class="w-4 h-4 text-summit-electric"></i>
+                    <span class="text-xs font-medium text-summit-electric uppercase tracking-wider">Nosotros</span>
                 </div>
-                <div class="stat-item text-center" data-tilt data-tilt-max="5" data-tilt-glare>
-                    <div class="text-4xl md:text-5xl font-bold text-summit-gold mb-2">25+</div>
-                    <div class="text-sm text-white/60 uppercase tracking-wider">Startups Invertidas</div>
-                </div>
-                <div class="stat-item text-center" data-tilt data-tilt-max="5" data-tilt-glare>
-                    <div class="text-4xl md:text-5xl font-bold text-summit-electric mb-2">15</div>
-                    <div class="text-sm text-white/60 uppercase tracking-wider">Exitosos Exits</div>
-                </div>
-                <div class="stat-item text-center" data-tilt data-tilt-max="5" data-tilt-glare>
-                    <div class="text-4xl md:text-5xl font-bold text-summit-gold mb-2">3x</div>
-                    <div class="text-sm text-white/60 uppercase tracking-wider">Retorno Promedio</div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 lg:py-32 relative">
-        <div class="w-full px-6 lg:px-12 xl:px-20">
+                <h2 class="text-4xl md:text-5xl font-bold font-space mb-6 leading-tight">
+                    Empresa Dedicada al <span class="text-gradient">Desarrollo de Software</span>
+                </h2>
+
+                <p class="text-lg text-white/70 mb-8 leading-relaxed">
+                    Brindamos soluciones tecnológicas completas: Páginas web, Aplicaciones móviles, Aplicaciones de escritorio,
+                    Aplicaciones web, SEO, Análisis de datos e Inteligencia artificial.
+                </p>
+            </div>
+
             <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <!-- Content Side -->
+                <div class="about-content">
+                    <div class="grid grid-cols-1 gap-8">
+                        <div class="flex items-start space-x-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all" data-tilt data-tilt-max="5">
+                            <div class="w-12 h-12 rounded-xl bg-summit-electric/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="target" class="w-6 h-6 text-summit-electric"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xl mb-2">¿Público Objetivo?</h4>
+                                <p class="text-white/60">Compañías, empresas, negocios, pymes o instituciones que busquen la sistematización de los procesos, servicios, procedimientos internos o externos u otras herramientas que son utilizadas en el día a día.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-summit-gold/50 transition-all" data-tilt data-tilt-max="5">
+                            <div class="w-12 h-12 rounded-xl bg-summit-gold/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="gift" class="w-6 h-6 text-summit-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-xl mb-2">¿Qué Ofrecemos?</h4>
+                                <p class="text-white/60">Diseño, desarrollo, instalación, mantenimiento de software, asesoría TI, inteligencia de negocios, automatizaciones de procesos, software para toma de decisiones e inteligencia artificial.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Image Side -->
                 <div class="about-image relative">
                     <div class="relative z-10 rounded-2xl overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"
-                             alt="Modern Architecture"
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                             alt="Equipo de desarrollo SummitVI"
                              class="w-full h-[500px] object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-summit-dark/80 to-transparent"></div>
                     </div>
@@ -224,52 +241,47 @@
                     <div class="absolute -top-6 -right-6 w-32 h-32 border-2 border-summit-electric/30 rounded-2xl -z-10"></div>
                     <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-summit-electric/10 rounded-2xl -z-10 blur-2xl"></div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Content Side -->
-                <div class="about-content">
-                    <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-summit-electric/10 border border-summit-electric/30 mb-6">
-                        <i data-lucide="mountain" class="w-4 h-4 text-summit-electric"></i>
-                        <span class="text-xs font-medium text-summit-electric uppercase tracking-wider">Quiénes Somos</span>
+    <!-- Tecnologías Section -->
+    <section id="tecnologias" class="py-20 border-y border-white/10">
+        <div class="w-full px-6 lg:px-12 xl:px-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold font-space mb-4">Tecnologías</h2>
+                <p class="text-white/60">Trabajamos con las tecnologías más modernas del mercado</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-items-center">
+                <div class="tech-item p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all hover:scale-110" data-tilt>
+                    <div class="text-center">
+                        <i data-lucide="smartphone" class="w-12 h-12 text-summit-electric mx-auto mb-3"></i>
+                        <span class="text-sm font-medium">iOS / Android</span>
                     </div>
-
-                    <h2 class="text-4xl md:text-5xl font-bold font-space mb-6 leading-tight">
-                        Alcanzando la <span class="text-gradient">Cumbre</span> del Éxito
-                    </h2>
-
-                    <p class="text-lg text-white/70 mb-6 leading-relaxed">
-                        SummitVI es una firma de venture capital con sede en Puerto Rico, dedicada a identificar y potenciar las startups tecnológicas más prometedoras de América Latina y el Caribe.
-                    </p>
-
-                    <p class="text-lg text-white/70 mb-8 leading-relaxed">
-                        Nuestro enfoque combina capital estratégico con mentoría experta y acceso a una red global de inversionistas, empresarios y líderes de la industria. Creemos en construir juntos, no solo invertir.
-                    </p>
-
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="flex items-start space-x-3">
-                            <div class="w-10 h-10 rounded-lg bg-summit-electric/20 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="target" class="w-5 h-5 text-summit-electric"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Visión Estratégica</h4>
-                                <p class="text-sm text-white/60">Identificamos oportunidades de alto impacto</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-3">
-                            <div class="w-10 h-10 rounded-lg bg-summit-gold/20 flex items-center justify-center flex-shrink-0">
-                                <i data-lucide="users" class="w-5 h-5 text-summit-gold"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold mb-1">Mentoría Experta</h4>
-                                <p class="text-sm text-white/60">Acompañamiento de clase mundial</p>
-                            </div>
-                        </div>
+                </div>
+                <div class="tech-item p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all hover:scale-110" data-tilt>
+                    <div class="text-center">
+                        <i data-lucide="code-2" class="w-12 h-12 text-summit-gold mx-auto mb-3"></i>
+                        <span class="text-sm font-medium">.NET / React</span>
+                    </div>
+                </div>
+                <div class="tech-item p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all hover:scale-110" data-tilt>
+                    <div class="text-center">
+                        <i data-lucide="database" class="w-12 h-12 text-summit-electric mx-auto mb-3"></i>
+                        <span class="text-sm font-medium">MongoDB / SQL</span>
+                    </div>
+                </div>
+                <div class="tech-item p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all hover:scale-110" data-tilt>
+                    <div class="text-center">
+                        <i data-lucide="monitor" class="w-12 h-12 text-summit-gold mx-auto mb-3"></i>
+                        <span class="text-sm font-medium">Web / Escritorio</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
+    <!-- Servicios Section -->
     <section id="servicios" class="py-24 lg:py-32 bg-summit-light relative overflow-hidden">
         <!-- Background Pattern -->
         <div class="absolute inset-0 opacity-30">
@@ -285,10 +297,10 @@
                     <span class="text-xs font-medium text-summit-dark uppercase tracking-wider">Nuestros Servicios</span>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold font-space text-summit-dark mb-4">
-                    Cómo Ayudamos a <span class="text-summit-electric">Crecer</span>
+                    Todo lo que <span class="text-summit-electric">Necesitas</span>
                 </h2>
                 <p class="text-lg text-summit-dark/70">
-                    Ofrecemos un ecosistema completo de apoyo para startups en todas las etapas de crecimiento.
+                    Ofrecemos soluciones completas para sistematizar tu negocio y llevarlo al siguiente nivel.
                 </p>
             </div>
 
@@ -298,17 +310,12 @@
                 <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
                     <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-electric to-summit-electric/60 flex items-center justify-center mb-6">
-                            <i data-lucide="seedling" class="w-7 h-7 text-white"></i>
+                            <i data-lucide="code" class="w-7 h-7 text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-summit-dark mb-3">Inversión Semilla</h3>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Diseño y Desarrollo de Software</h3>
                         <p class="text-summit-dark/60 text-sm leading-relaxed">
-                            Capital inicial para validar tu idea y construir tu MVP. De $50K a $500K.
+                            Creamos soluciones a medida para tus necesidades específicas.
                         </p>
-                        <div class="mt-6 pt-6 border-t border-summit-dark/10">
-                            <span class="text-summit-electric font-semibold text-sm flex items-center">
-                                Saber más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                            </span>
-                        </div>
                     </div>
                 </div>
 
@@ -316,17 +323,12 @@
                 <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
                     <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-gold to-summit-gold/60 flex items-center justify-center mb-6">
-                            <i data-lucide="trending-up" class="w-7 h-7 text-white"></i>
+                            <i data-lucide="download" class="w-7 h-7 text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-summit-dark mb-3">Serie A/B</h3>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Instalación de Software</h3>
                         <p class="text-summit-dark/60 text-sm leading-relaxed">
-                            Escalamiento para startups con tracción comprobada. De $1M a $10M.
+                            Configuración e implementación profesional de sistemas.
                         </p>
-                        <div class="mt-6 pt-6 border-t border-summit-dark/10">
-                            <span class="text-summit-gold font-semibold text-sm flex items-center">
-                                Saber más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                            </span>
-                        </div>
                     </div>
                 </div>
 
@@ -334,17 +336,12 @@
                 <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
                     <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-electric to-summit-electric/60 flex items-center justify-center mb-6">
-                            <i data-lucide="compass" class="w-7 h-7 text-white"></i>
+                            <i data-lucide="lightbulb" class="w-7 h-7 text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-summit-dark mb-3">Mentoría</h3>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Asesoría Tecnológica</h3>
                         <p class="text-summit-dark/60 text-sm leading-relaxed">
-                            Acompañamiento estratégico de expertos con experiencia en tu industria.
+                            Consultoría experta para optimizar tus procesos tecnológicos.
                         </p>
-                        <div class="mt-6 pt-6 border-t border-summit-dark/10">
-                            <span class="text-summit-electric font-semibold text-sm flex items-center">
-                                Saber más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                            </span>
-                        </div>
                     </div>
                 </div>
 
@@ -352,25 +349,72 @@
                 <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
                     <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
                         <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-gold to-summit-gold/60 flex items-center justify-center mb-6">
-                            <i data-lucide="globe" class="w-7 h-7 text-white"></i>
+                            <i data-lucide="bar-chart-3" class="w-7 h-7 text-white"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-summit-dark mb-3">Network Global</h3>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Inteligencia de Negocio</h3>
                         <p class="text-summit-dark/60 text-sm leading-relaxed">
-                            Acceso a inversionistas, clientes potenciales y partners estratégicos.
+                            Análisis de datos para tomar mejores decisiones.
                         </p>
-                        <div class="mt-6 pt-6 border-t border-summit-dark/10">
-                            <span class="text-summit-gold font-semibold text-sm flex items-center">
-                                Saber más <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
-                            </span>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-electric to-summit-electric/60 flex items-center justify-center mb-6">
+                            <i data-lucide="settings" class="w-7 h-7 text-white"></i>
                         </div>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Automatización de Procesos</h3>
+                        <p class="text-summit-dark/60 text-sm leading-relaxed">
+                            Optimización y automatización de tareas repetitivas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-gold to-summit-gold/60 flex items-center justify-center mb-6">
+                            <i data-lucide="wrench" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Mantenimiento de Software</h3>
+                        <p class="text-summit-dark/60 text-sm leading-relaxed">
+                            Soporte continuo y actualizaciones de sistemas.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card 7 -->
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-electric to-summit-electric/60 flex items-center justify-center mb-6">
+                            <i data-lucide="headphones" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Servicio de Software</h3>
+                        <p class="text-summit-dark/60 text-sm leading-relaxed">
+                            Soluciones SaaS y servicios en la nube.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Service Card 8 -->
+                <div class="service-card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-glare data-tilt-max-glare="0.3">
+                    <div class="card-inner p-8 rounded-2xl bg-white border border-summit-dark/10 h-full">
+                        <div class="w-14 h-14 rounded-xl bg-gradient-to-br from-summit-gold to-summit-gold/60 flex items-center justify-center mb-6">
+                            <i data-lucide="brain" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-summit-dark mb-3">Software para Decisiones</h3>
+                        <p class="text-summit-dark/60 text-sm leading-relaxed">
+                            Herramientas de apoyo para la toma de decisiones estratégicas.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-24 lg:py-32 relative overflow-hidden">
+    <!-- Proyectos Section -->
+    <section id="proyectos" class="py-24 lg:py-32 relative overflow-hidden">
         <!-- Floating Background Elements -->
         <div class="portfolio-float absolute inset-0 pointer-events-none">
             <div class="float-item" style="--orbit: 20s; --radius: 200px; top: 20%; left: 10%;">
@@ -383,11 +427,6 @@
                     <i data-lucide="rocket" class="w-8 h-8 text-summit-gold"></i>
                 </div>
             </div>
-            <div class="float-item" style="--orbit: 30s; --radius: 180px; top: 40%; left: 85%;">
-                <div class="w-14 h-14 rounded-full bg-summit-electric/20 flex items-center justify-center">
-                    <i data-lucide="zap" class="w-5 h-5 text-summit-electric"></i>
-                </div>
-            </div>
         </div>
 
         <div class="w-full px-6 lg:px-12 xl:px-20 relative z-10">
@@ -395,186 +434,47 @@
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-summit-gold/10 border border-summit-gold/30 mb-6">
                     <i data-lucide="briefcase" class="w-4 h-4 text-summit-gold"></i>
-                    <span class="text-xs font-medium text-summit-gold uppercase tracking-wider">Portfolio</span>
+                    <span class="text-xs font-medium text-summit-gold uppercase tracking-wider">Proyectos Realizados</span>
                 </div>
                 <h2 class="text-4xl md:text-5xl font-bold font-space mb-4">
-                    Empresas que Han <span class="text-gradient">Escalado</span>
+                    Nuestros <span class="text-gradient">Trabajos</span>
                 </h2>
                 <p class="text-lg text-white/70">
-                    Conoce algunas de las startups que han confiado en nosotros para alcanzar la cumbre.
+                    Conoce algunos de los proyectos que hemos desarrollado para nuestros clientes.
                 </p>
             </div>
 
-            <!-- Portfolio Grid -->
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Portfolio Item 1 -->
+            <!-- Project Card -->
+            <div class="max-w-4xl mx-auto">
                 <div class="portfolio-card group relative">
                     <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all duration-500">
-                        <div class="aspect-[4/3] relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?w=600&q=80"
-                                 alt="Tech Startup"
+                        <div class="aspect-[16/9] relative overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1200&q=80"
+                                 alt="Seguro Medico Ibarffaa"
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                             <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
                         </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold">TechFlow</h3>
-                                <span class="px-3 py-1 rounded-full bg-summit-electric/20 text-summit-electric text-xs font-medium">Series A</span>
+                        <div class="absolute bottom-0 left-0 right-0 p-8">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-3xl font-bold">Seguro Medico Ibarffaa</h3>
+                                <span class="px-4 py-2 rounded-full bg-summit-electric/20 text-summit-electric text-sm font-medium">Institución Médica</span>
                             </div>
-                            <p class="text-white/60 text-sm mb-4">Plataforma de automatización de flujos de trabajo para empresas.</p>
-                            <div class="flex items-center space-x-4 text-sm">
+                            <p class="text-white/70 text-lg mb-6">
+                                Esta aplicación web se creó con el objetivo de automatizar y controlar los procesos médicos de los afiliados de dicho centro de salud,
+                                buscando garantizar la integridad de los datos de cada uno de los pacientes en sus actividades de la salud.
+                            </p>
+                            <div class="flex items-center space-x-6">
                                 <span class="flex items-center text-white/80">
-                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
-                                    300% crecimiento
+                                    <i data-lucide="check-circle" class="w-5 h-5 mr-2 text-summit-electric"></i>
+                                    Automatización Completa
                                 </span>
                                 <span class="flex items-center text-white/80">
-                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
-                                    50+ empleados
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 2 -->
-                <div class="portfolio-card group relative">
-                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-gold/50 transition-all duration-500">
-                        <div class="aspect-[4/3] relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=80"
-                                 alt="Fintech Startup"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold">FinPuerto</h3>
-                                <span class="px-3 py-1 rounded-full bg-summit-gold/20 text-summit-gold text-xs font-medium">Series B</span>
-                            </div>
-                            <p class="text-white/60 text-sm mb-4">Soluciones de pago digital para el mercado latinoamericano.</p>
-                            <div class="flex items-center space-x-4 text-sm">
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
-                                    500% crecimiento
+                                    <i data-lucide="shield-check" class="w-5 h-5 mr-2 text-summit-gold"></i>
+                                    Seguridad de Datos
                                 </span>
                                 <span class="flex items-center text-white/80">
-                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
-                                    120+ empleados
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3 -->
-                <div class="portfolio-card group relative">
-                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all duration-500">
-                        <div class="aspect-[4/3] relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80"
-                                 alt="Health Tech"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold">MediCaribe</h3>
-                                <span class="px-3 py-1 rounded-full bg-summit-electric/20 text-summit-electric text-xs font-medium">Semilla</span>
-                            </div>
-                            <p class="text-white/60 text-sm mb-4">Telemedicina y gestión de salud para comunidades remotas.</p>
-                            <div class="flex items-center space-x-4 text-sm">
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
-                                    150% crecimiento
-                                </span>
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
-                                    25+ empleados
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 4 -->
-                <div class="portfolio-card group relative">
-                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-gold/50 transition-all duration-500">
-                        <div class="aspect-[4/3] relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=80"
-                                 alt="SaaS Platform"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold">CloudPeak</h3>
-                                <span class="px-3 py-1 rounded-full bg-summit-gold/20 text-summit-gold text-xs font-medium">Series A</span>
-                            </div>
-                            <p class="text-white/60 text-sm mb-4">Infraestructura cloud para empresas del Caribe.</p>
-                            <div class="flex items-center space-x-4 text-sm">
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
-                                    250% crecimiento
-                                </span>
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
-                                    40+ empleados
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 5 -->
-                <div class="portfolio-card group relative">
-                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-electric/50 transition-all duration-500">
-                        <div class="aspect-[4/3] relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=80"
-                                 alt="E-commerce"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold">MercadoLatino</h3>
-                                <span class="px-3 py-1 rounded-full bg-summit-electric/20 text-summit-electric text-xs font-medium">Exit</span>
-                            </div>
-                            <p class="text-white/60 text-sm mb-4">Marketplace B2B para comercio intra-regional.</p>
-                            <div class="flex items-center space-x-4 text-sm">
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="check-circle" class="w-4 h-4 mr-1 text-summit-gold"></i>
-                                    Exit exitoso
-                                </span>
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="dollar-sign" class="w-4 h-4 mr-1 text-summit-gold"></i>
-                                    8x retorno
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 6 -->
-                <div class="portfolio-card group relative">
-                    <div class="relative rounded-2xl overflow-hidden bg-white/5 border border-white/10 hover:border-summit-gold/50 transition-all duration-500">
-                        <div class="aspect-[4/3] relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=600&q=80"
-                                 alt="Data Analytics"
-                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-summit-dark via-summit-dark/50 to-transparent"></div>
-                        </div>
-                        <div class="absolute bottom-0 left-0 right-0 p-6">
-                            <div class="flex items-center justify-between mb-2">
-                                <h3 class="text-xl font-bold">DataVista</h3>
-                                <span class="px-3 py-1 rounded-full bg-summit-gold/20 text-summit-gold text-xs font-medium">Series A</span>
-                            </div>
-                            <p class="text-white/60 text-sm mb-4">Análisis predictivo para el sector turístico.</p>
-                            <div class="flex items-center space-x-4 text-sm">
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="trending-up" class="w-4 h-4 mr-1 text-summit-electric"></i>
-                                    400% crecimiento
-                                </span>
-                                <span class="flex items-center text-white/80">
-                                    <i data-lucide="users" class="w-4 h-4 mr-1 text-summit-gold"></i>
-                                    35+ empleados
+                                    <i data-lucide="users" class="w-5 h-5 mr-2 text-summit-electric"></i>
+                                    Gestión de Pacientes
                                 </span>
                             </div>
                         </div>
@@ -595,17 +495,17 @@
         <div class="w-full px-6 lg:px-12 xl:px-20 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
                 <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold font-space mb-6">
-                    ¿Listo para <span class="text-gradient">Escalar</span>?
+                    ¿Listo para <span class="text-gradient">Sistematizar</span> tu Negocio?
                 </h2>
                 <p class="text-xl text-white/70 mb-10 max-w-2xl mx-auto">
-                    Si tienes una startup tecnológica con potencial de crecimiento, queremos conocerte. Juntos podemos alcanzar la cumbre.
+                    Contáctanos hoy mismo y descubre cómo podemos ayudarte a optimizar tus procesos con tecnología de vanguardia.
                 </p>
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
                     <a href="#contacto" class="btn-3d-primary px-10 py-5 text-lg font-semibold rounded-full flex items-center space-x-3">
-                        <span>Aplicar a Inversión</span>
+                        <span>Solicitar Servicio</span>
                         <i data-lucide="send" class="w-5 h-5"></i>
                     </a>
-                    <a href="mailto:info@summitvi.com" class="px-10 py-5 text-lg font-medium rounded-full border border-white/20 hover:bg-white/5 transition-all">
+                    <a href="mailto:info@summitvi.net" class="px-10 py-5 text-lg font-medium rounded-full border border-white/20 hover:bg-white/5 transition-all">
                         Contactar Directo
                     </a>
                 </div>
@@ -629,7 +529,7 @@
                     </h2>
 
                     <p class="text-lg text-summit-dark/70 mb-10">
-                        Ya sea que busques inversión, tengas preguntas sobre nuestro proceso, o simplemente quieras conectar, estamos aquí para escucharte.
+                        Estamos aquí para ayudarte. Contáctanos y descubre cómo podemos transformar tu negocio con tecnología.
                     </p>
 
                     <div class="space-y-6">
@@ -638,8 +538,8 @@
                                 <i data-lucide="map-pin" class="w-6 h-6 text-summit-electric"></i>
                             </div>
                             <div>
-                                <h4 class="font-semibold text-summit-dark mb-1">Oficina Principal</h4>
-                                <p class="text-summit-dark/60">Torre Chardón, Suite 1200<br>San Juan, Puerto Rico 00918</p>
+                                <h4 class="font-semibold text-summit-dark mb-1">Ubicación</h4>
+                                <p class="text-summit-dark/60">Santo Domingo, República Dominicana</p>
                             </div>
                         </div>
 
@@ -649,7 +549,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-summit-dark mb-1">Email</h4>
-                                <p class="text-summit-dark/60">info@summitvi.com<br>invest@summitvi.com</p>
+                                <p class="text-summit-dark/60">info@summitvi.net</p>
                             </div>
                         </div>
 
@@ -659,7 +559,17 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-summit-dark mb-1">Teléfono</h4>
-                                <p class="text-summit-dark/60">+1 (787) 555-0147</p>
+                                <p class="text-summit-dark/60">+1 (829) 756-2345</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-summit-gold/20 flex items-center justify-center flex-shrink-0">
+                                <i data-lucide="clock" class="w-6 h-6 text-summit-gold"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-summit-dark mb-1">Horario</h4>
+                                <p class="text-summit-dark/60">Lunes | Viernes</p>
                             </div>
                         </div>
                     </div>
@@ -677,10 +587,10 @@
                                            placeholder="Tu nombre">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-summit-dark mb-2">Empresa</label>
-                                    <input type="text" name="empresa"
+                                    <label class="block text-sm font-medium text-summit-dark mb-2">Teléfono</label>
+                                    <input type="tel" name="telefono"
                                            class="w-full px-4 py-3 rounded-lg border border-summit-dark/20 focus:border-summit-electric focus:ring-2 focus:ring-summit-electric/20 outline-none transition-all"
-                                           placeholder="Nombre de tu empresa">
+                                           placeholder="Tu teléfono">
                                 </div>
                             </div>
 
@@ -692,19 +602,23 @@
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-summit-dark mb-2">Tipo de Consulta</label>
-                                <select name="tipo" required
+                                <label class="block text-sm font-medium text-summit-dark mb-2">Servicio Requerido</label>
+                                <select name="servicio" required
                                         class="w-full px-4 py-3 rounded-lg border border-summit-dark/20 focus:border-summit-electric focus:ring-2 focus:ring-summit-electric/20 outline-none transition-all bg-white">
-                                    <option value="">Selecciona una opción</option>
-                                    <option value="inversion">Solicitud de Inversión</option>
-                                    <option value="informacion">Información General</option>
-                                    <option value="partnership">Partnership Estratégico</option>
+                                    <option value="">Selecciona un servicio</option>
+                                    <option value="diseno">Diseño y desarrollo de software</option>
+                                    <option value="instalacion">Instalación de software</option>
+                                    <option value="asesoria">Asesoría tecnológica</option>
+                                    <option value="inteligencia">Inteligencia de negocio</option>
+                                    <option value="automatizacion">Automatización de procesos</option>
+                                    <option value="mantenimiento">Mantenimiento de software</option>
+                                    <option value="decisiones">Software para toma de decisiones</option>
                                     <option value="otro">Otro</option>
                                 </select>
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-summit-dark mb-2">Mensaje</label>
+                                <label class="block text-sm font-medium text-summit-dark mb-2">Descripción</label>
                                 <textarea name="mensaje" rows="4" required
                                           class="w-full px-4 py-3 rounded-lg border border-summit-dark/20 focus:border-summit-electric focus:ring-2 focus:ring-summit-electric/20 outline-none transition-all resize-none"
                                           placeholder="Cuéntanos sobre tu proyecto..."></textarea>
@@ -742,7 +656,7 @@
                         </span>
                     </a>
                     <p class="text-white/60 mb-6 max-w-md">
-                        Elevando startups tecnológicas al siguiente nivel. Tu socio estratégico para alcanzar la cumbre del éxito.
+                        Empresa dedicada al desarrollo de software. Explora la tecnología y sé tu propio héroe digital.
                     </p>
                     <div class="flex space-x-4">
                         <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-summit-electric/20 hover:border-summit-electric/50 transition-all">
@@ -754,9 +668,6 @@
                         <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-summit-electric/20 hover:border-summit-electric/50 transition-all">
                             <i data-lucide="instagram" class="w-5 h-5"></i>
                         </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-summit-electric/20 hover:border-summit-electric/50 transition-all">
-                            <i data-lucide="youtube" class="w-5 h-5"></i>
-                        </a>
                     </div>
                 </div>
 
@@ -764,21 +675,21 @@
                 <div>
                     <h4 class="font-semibold mb-4">Enlaces Rápidos</h4>
                     <ul class="space-y-3">
-                        <li><a href="#about" class="text-white/60 hover:text-summit-electric transition-colors">Nosotros</a></li>
+                        <li><a href="#inicio" class="text-white/60 hover:text-summit-electric transition-colors">Inicio</a></li>
+                        <li><a href="#nosotros" class="text-white/60 hover:text-summit-electric transition-colors">Nosotros</a></li>
                         <li><a href="#servicios" class="text-white/60 hover:text-summit-electric transition-colors">Servicios</a></li>
-                        <li><a href="#portfolio" class="text-white/60 hover:text-summit-electric transition-colors">Portfolio</a></li>
+                        <li><a href="#proyectos" class="text-white/60 hover:text-summit-electric transition-colors">Proyectos</a></li>
                         <li><a href="#contacto" class="text-white/60 hover:text-summit-electric transition-colors">Contacto</a></li>
                     </ul>
                 </div>
 
-                <!-- Resources -->
+                <!-- Legal -->
                 <div>
-                    <h4 class="font-semibold mb-4">Recursos</h4>
+                    <h4 class="font-semibold mb-4">Legal</h4>
                     <ul class="space-y-3">
-                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Blog</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Guía para Startups</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Eventos</a></li>
-                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Prensa</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Aviso de Cookies</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Política de Privacidad</a></li>
+                        <li><a href="#" class="text-white/60 hover:text-summit-electric transition-colors">Términos de Servicio</a></li>
                     </ul>
                 </div>
             </div>
@@ -786,12 +697,11 @@
             <!-- Bottom -->
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between">
                 <p class="text-white/40 text-sm">
-                    © 2026 SummitVI. Todos los derechos reservados.
+                    © 2024 SummitVI. Todos los derechos reservados.
                 </p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="text-white/40 hover:text-white/60 text-sm transition-colors">Política de Privacidad</a>
-                    <a href="#" class="text-white/40 hover:text-white/60 text-sm transition-colors">Términos de Servicio</a>
-                </div>
+                <p class="text-white/40 text-sm mt-4 md:mt-0">
+                    Santo Domingo, República Dominicana
+                </p>
             </div>
         </div>
     </footer>

@@ -29,6 +29,20 @@
 
     <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <!-- SVG Gradients for Logo -->
+    <svg width="0" height="0" style="position: absolute;">
+        <defs>
+            <linearGradient id="logoGradient3D" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00D4FF"/>
+                <stop offset="100%" stop-color="#FFB800"/>
+            </linearGradient>
+            <linearGradient id="logoGradientGold" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#FFB800"/>
+                <stop offset="100%" stop-color="#FF6B00"/>
+            </linearGradient>
+        </defs>
+    </svg>
 </head>
 <body class="bg-summit-dark text-white overflow-x-hidden">
 
@@ -36,21 +50,36 @@
     <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500">
         <div class="w-full px-6 lg:px-12 xl:px-20">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <a href="#" class="flex items-center space-x-3 group">
-                    <div class="logo-container">
-                        <svg class="w-10 h-10" viewBox="0 0 40 40" fill="none">
-                            <path class="logo-mountain" d="M20 5L5 35H15L20 25L25 35H35L20 5Z" fill="url(#logoGradient)"/>
-                            <defs>
-                                <linearGradient id="logoGradient" x1="5" y1="5" x2="35" y2="35">
-                                    <stop offset="0%" stop-color="#00D4FF"/>
-                                    <stop offset="100%" stop-color="#FFB800"/>
-                                </linearGradient>
-                            </defs>
-                        </svg>
+                <!-- Logo Creativo Animado -->
+                <a href="#" class="flex items-center space-x-3 group logo-wrapper">
+                    <div class="logo-3d-container">
+                        <div class="logo-cube-wrapper">
+                            <div class="logo-cube">
+                                <div class="logo-face logo-face-front">
+                                    <svg class="logo-mountain-icon" viewBox="0 0 50 50" fill="none">
+                                        <path class="logo-mountain-path" d="M25 8L8 42H18L25 28L32 42H42L25 8Z"/>
+                                        <circle class="logo-sun" cx="38" cy="15" r="5"/>
+                                    </svg>
+                                </div>
+                                <div class="logo-face logo-face-back"></div>
+                                <div class="logo-face logo-face-right"></div>
+                                <div class="logo-face logo-face-left"></div>
+                                <div class="logo-face logo-face-top"></div>
+                                <div class="logo-face logo-face-bottom"></div>
+                            </div>
+                            <!-- Glow effect -->
+                            <div class="logo-glow"></div>
+                        </div>
+                        <!-- Particles around logo -->
+                        <div class="logo-particles">
+                            <span class="logo-particle p1"></span>
+                            <span class="logo-particle p2"></span>
+                            <span class="logo-particle p3"></span>
+                            <span class="logo-particle p4"></span>
+                        </div>
                     </div>
-                    <span class="text-xl font-bold font-space tracking-tight">
-                        SUMMIT<span class="text-summit-electric">VI</span>
+                    <span class="text-xl font-bold font-space tracking-tight logo-text">
+                        <span class="logo-text-summit">SUMMIT</span><span class="logo-text-vi">VI</span>
                     </span>
                 </a>
 
